@@ -33,68 +33,79 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4">
+    <section className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-lg">
-        
-        {/* Heading */}
-        <h2 className="text-center text-white text-4xl font-semibold mb-10">
+
+        {/* Title */}
+        <h2 className="text-center text-white text-4xl font-semibold mb-10 tracking-wide drop-shadow-lg">
           Get in touch
         </h2>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+        {/* FORM */}
+        <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
 
-          {/* Name */}
           <input
             name="name"
-            required
             placeholder="Name"
-            className="w-full px-4 py-3 border border-white/60 rounded-md bg-transparent text-white placeholder-white outline-none"
+            required
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none transition duration-300 
+                      focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
-          {/* Email */}
           <input
             name="email"
             type="email"
-            required
             placeholder="Email"
-            className="w-full px-4 py-3 border border-white/60 rounded-md bg-transparent text-white placeholder-white outline-none"
+            required
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none transition duration-300 
+                      focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
-          {/* Phone */}
           <input
             name="phone"
             type="tel"
-            required
             placeholder="Phone"
-            className="w-full px-4 py-3 border border-white/60 rounded-md bg-transparent text-white placeholder-white outline-none"
+            required
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none transition duration-300 
+                      focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
-          {/* Message */}
           <textarea
             name="message"
-            required
             placeholder="Message"
+            required
             rows={4}
-            className="w-full px-4 py-3 border border-white/60 rounded-md bg-transparent text-white placeholder-white outline-none resize-none"
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none resize-none transition duration-300 
+                      focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
-          {/* Submit */}
+          {/* SUBMIT BUTTON — upgraded */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-white text-black font-semibold rounded-md disabled:opacity-60"
+            className="
+              w-full py-3.5 bg-white text-black font-semibold rounded-md 
+              transition-all duration-300 cursor-pointer
+              shadow-md
+              hover:shadow-xl hover:scale-[1.02] hover:bg-[#f1f1f1]
+              active:scale-[0.98]
+              disabled:opacity-60 disabled:cursor-not-allowed
+            "
           >
             {loading ? "Sending..." : "SUBMIT"}
           </button>
         </form>
 
-        {/* Status Messages */}
+        {/* STATUS MESSAGES */}
         {status === "success" && (
-          <p className="text-green-400 mt-4 text-center">Message sent successfully!</p>
+          <p className="text-green-400 mt-4 text-center animate-pulse">
+            Message sent successfully!
+          </p>
         )}
         {status === "error" && (
-          <p className="text-red-400 mt-4 text-center">Something went wrong. Try again.</p>
+          <p className="text-red-400 mt-4 text-center">
+            Something went wrong. Please try again.
+          </p>
         )}
       </div>
     </section>
