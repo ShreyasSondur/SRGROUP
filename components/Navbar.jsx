@@ -7,7 +7,7 @@ const Navbar = () => {
       {/* Logo Section */}
       <div className="flex items-center">
         <Link href="/">
-          <div className="relative w-16 h-16">
+          <div className="relative w-10 h-10">
              <Image 
               src="/logo.png" 
               alt="SR Group Logo" 
