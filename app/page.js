@@ -7,7 +7,6 @@ import Services from "../components/Services";
 import Contact from "../components/Contact";
 import About from "../components/About";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 export default function HomePage() {
 
   return (
