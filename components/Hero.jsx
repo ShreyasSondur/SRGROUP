@@ -29,7 +29,7 @@ export default function Hero() {
         </p>
         <button
           onClick={scrollToContact}
-          className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
+          className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 cursor-pointer transition-colors"
         >
           Get in Touch
         </button>

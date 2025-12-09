@@ -40,7 +40,7 @@ export default function Services() {
           <div className="w-32 h-0.5 bg-white mx-auto mt-4"></div>
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-18 max-w-8xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}
