@@ -19,7 +19,7 @@ export default function About() {
 
       {/* Centered card */}
       <div className="relative z-10 flex items-center justify-center h-full px-6">
-        <div className="bg-white/95 backdrop-blur-sm shadow-2xl rounded-2xl max-w-2xl p-8 md:p-10">
+        <div className="bg-white/40 backdrop-blur-xl shadow-2xl rounded-2xl max-w-2xl p-8 md:p-10 border border-white/30">
           <h2 className="text-2xl md:text-3xl font-semibold mb-3 border-b pb-2">
             About SRGROUP
           </h2>
