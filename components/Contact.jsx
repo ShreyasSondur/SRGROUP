@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+
+  // Prevent SSR → Client mismatch
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -32,6 +36,16 @@ export default function ContactForm() {
     }
   }
 
+  // Avoid SSR mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <section className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4">
+        {/* Empty shell to match SSR layout exactly */}
+        <div className="w-full max-w-lg" />
+      </section>
+    );
+  }
+
   return (
     <section className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-lg">
@@ -48,8 +62,9 @@ export default function ContactForm() {
             name="name"
             placeholder="Name"
             required
-            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none transition duration-300 
-                      focus:border-white focus:shadow-lg focus:shadow-white/20"
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md 
+                       text-white placeholder-white/80 outline-none transition duration-300
+                       focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
           <input
@@ -57,8 +72,9 @@ export default function ContactForm() {
             type="email"
             placeholder="Email"
             required
-            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none transition duration-300 
-                      focus:border-white focus:shadow-lg focus:shadow-white/20"
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md 
+                       text-white placeholder-white/80 outline-none transition duration-300
+                       focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
           <input
@@ -66,8 +82,9 @@ export default function ContactForm() {
             type="tel"
             placeholder="Phone"
             required
-            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none transition duration-300 
-                      focus:border-white focus:shadow-lg focus:shadow-white/20"
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md 
+                       text-white placeholder-white/80 outline-none transition duration-300
+                       focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
           <textarea
@@ -75,16 +92,17 @@ export default function ContactForm() {
             placeholder="Message"
             required
             rows={4}
-            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md text-white placeholder-white/80 outline-none resize-none transition duration-300 
-                      focus:border-white focus:shadow-lg focus:shadow-white/20"
+            className="w-full px-5 py-3 bg-transparent border border-white/50 rounded-md 
+                       text-white placeholder-white/80 outline-none resize-none transition 
+                       duration-300 focus:border-white focus:shadow-lg focus:shadow-white/20"
           />
 
-          {/* SUBMIT BUTTON — upgraded */}
+          {/* SUBMIT BUTTON — improved UI */}
           <button
             type="submit"
             disabled={loading}
             className="
-              w-full py-3.5 bg-white text-black font-semibold rounded-md 
+              w-full py-3.5 bg-white text-black font-semibold rounded-md
               transition-all duration-300 cursor-pointer
               shadow-md
               hover:shadow-xl hover:scale-[1.02] hover:bg-[#f1f1f1]
@@ -96,17 +114,19 @@ export default function ContactForm() {
           </button>
         </form>
 
-        {/* STATUS MESSAGES */}
+        {/* Status */}
         {status === "success" && (
           <p className="text-green-400 mt-4 text-center animate-pulse">
             Message sent successfully!
           </p>
         )}
+
         {status === "error" && (
           <p className="text-red-400 mt-4 text-center">
             Something went wrong. Please try again.
           </p>
         )}
+
       </div>
     </section>
   );
