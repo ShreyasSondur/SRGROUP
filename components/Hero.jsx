@@ -6,7 +6,7 @@ export default function Hero() {
   };
 
   return (
-    <div
+    <div id="home"
       className="relative min-h-screen flex items-center justify-center text-white"
       style={{
         backgroundImage: "url('/herobg.png')",

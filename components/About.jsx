@@ -2,11 +2,11 @@
 
 export default function About() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section id="about" className="relative w-full h-screen overflow-hidden">
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/boat.mp4"          // 👈 important: leading slash
+        src="/boat.mp4"
         autoPlay
         loop
         muted

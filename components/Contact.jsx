@@ -39,7 +39,7 @@ export default function ContactForm() {
   // Avoid SSR mismatch by not rendering until mounted
   if (!mounted) {
     return (
-      <section className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4">
+      <section  className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4">
         {/* Empty shell to match SSR layout exactly */}
         <div className="w-full max-w-lg" />
       </section>
@@ -47,7 +47,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4 py-20">
+    <section id="contact" className="w-full min-h-screen bg-[#0E254A] flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-lg">
 
         {/* Title */}
