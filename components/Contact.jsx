@@ -51,8 +51,8 @@ export default function ContactForm() {
       <div className="w-full max-w-lg">
 
         {/* Title */}
-        <h2 className="text-center text-white text-4xl font-semibold mb-10 tracking-wide drop-shadow-lg">
-          Get in touch
+        <h2 className="text-center text-white text-5xl font-semibold pb-6 mb-10 tracking-widest drop-shadow-lg">
+          Get in Touch
         </h2>
 
         {/* FORM */}

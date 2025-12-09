@@ -38,19 +38,9 @@ export default function Footer() {
                 href="tel:+919513201518"
                 className="hover:text-blue-800 hover:translate-x-1 inline-block transition-all duration-300"
               >
-                +91 9513201518
+                +91 9513201518 / +968 79672527
               </a>
             </li>
-
-            <li>
-              <a
-                href="tel:+96879672527"
-                className="hover:text-blue-800 hover:translate-x-1 inline-block transition-all duration-300"
-              >
-                 +968 79672527
-              </a>
-            </li>
-
             <li>
               <a
                 href="https://wa.me/919513201518"
