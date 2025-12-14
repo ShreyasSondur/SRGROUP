@@ -1,7 +1,6 @@
 "use client";
 
-import { Instagram, Twitter, Facebook } from "lucide-react";
-import Link from "next/link";
+import { Instagram, X, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -70,7 +69,7 @@ export default function Footer() {
               <Instagram size={18} /> Instagram
             </li>
             <li className="flex items-center gap-2 transition-all duration-300 hover:translate-x-1 hover:text-blue-800 cursor-pointer">
-              <Twitter size={18} /> Twitter (X)
+              <X size={18} /> Twitter (X)
             </li>
             <li className="flex items-center gap-2 transition-all duration-300 hover:translate-x-1 hover:text-blue-800 cursor-pointer">
               <Facebook size={18} /> Facebook
