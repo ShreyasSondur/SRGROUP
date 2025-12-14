@@ -1,8 +1,17 @@
 "use client";
 
 import { Instagram, X, Facebook } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
+  
+  const XIcon = () => (
+    <svg className="w-5 h-5 mt-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+    </svg>
+  );
+
+
   return (
     <footer className="w-full bg-white text-black border-t">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -69,7 +78,7 @@ export default function Footer() {
               <Instagram size={18} /> Instagram
             </li>
             <li className="flex items-center gap-2 transition-all duration-300 hover:translate-x-1 hover:text-blue-800 cursor-pointer">
-              <X size={18} /> Twitter (X)
+              <XIcon size={18} /> Twitter (X)
             </li>
             <li className="flex items-center gap-2 transition-all duration-300 hover:translate-x-1 hover:text-blue-800 cursor-pointer">
               <Facebook size={18} /> Facebook
